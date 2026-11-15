@@ -120,9 +120,22 @@ function showBrand(i) {
   $('.ig-post .ph .u', refPh).textContent = b.h || b.n;
   $('.ig-st', refPh).innerHTML = b.f ? `<div><b>${b.f}</b><span>دنبال‌کننده</span></div>` : '';
   $('.ig-bio', refPh).innerHTML = `<b>${b.n}</b><em>${b.tag}</em>` + (b.h ? `<span class="lk">instagram.com/${b.h}</span>` : '');
+  const RM = '<svg class="ml" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 6v7l6-3.5L10 9Z"/></svg>';
   $('.ig-grid', refPh).innerHTML = b.tiles.length
-    ? b.tiles.map(t => `<button data-p="${t.key}" aria-label="باز کردن پست"><img src="${t.img}" alt=""></button>`).join('')
-    : `<div class="ig-empty">${b.h ? 'پست‌های این پیج را مستقیم در اینستاگرام ببینید.' : 'این برند پیج فعالی ندارد.'}</div>`;
+    ? b.tiles.map(t => t.img
+        ? `<button data-p="${t.key}" aria-label="باز کردن پست"><img src="${t.img}" alt="">${t.kind === 'reel' ? RM : ''}</button>`
+        : `<a class="xl" href="${t.href}" target="_blank" rel="noopener" aria-label="دیدن این پست در اینستاگرام">${EXT}<span>دیدن در اینستاگرام</span></a>`).join('')
+    : `<div class="ig-empty">این برند پیج فعالی ندارد.</div>`;
+  let hlb = $('.ig-hl', refPh);
+  if (!hlb) { hlb = document.createElement('div'); hlb.className = 'ig-hl'; $('.ig-tabs', refPh).before(hlb); }
+  hlb.innerHTML = (b.hl || []).map(t => `<div><i><span></span></i>${t}</div>`).join('');
+  hlb.hidden = !(b.hl && b.hl.length);
+  const wc = $('.webcard', note);
+  if (wc) {
+    wc.href = b.w; $('em', wc).textContent = b.w.replace('https://', '');
+    const im = $('img', wc);
+    if (b.web) { im.src = b.web; im.hidden = false; wc.classList.remove('noimg'); } else { im.hidden = true; wc.classList.add('noimg'); }
+  }
   $('.ig', refPh).scrollTop = 0;
   if (b.url) { go.href = b.url; go.classList.remove('off'); } else go.classList.add('off');
   note.classList.remove('swap'); void note.offsetWidth; note.classList.add('swap');

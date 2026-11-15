@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Inovosense · «از عمق تا نور» — proposal site, v2 (depth → light).
-import json, math, random, html as H
+import json, html, math, random, html as H
 
 FA = str.maketrans('0123456789', '۰۱۲۳۴۵۶۷۸۹')
 def fa(x): return str(x).translate(FA)
@@ -158,77 +158,96 @@ P(f'''<section class="sec z-d" id="rules">
 P(chapter(1, 'از دیگران چه یاد می‌گیریم', '۱۸ برند که مردم اسمشان را صدا می‌زنند. روی هر برند بزنید تا پیجش در گوشی باز شود و تحلیل ما کنارش بیاید.', 'img/ai/box-flip-916.jpg', C['shine'], 'd'))
 
 B = [
- dict(n='Hydrafacial',h='hydrafacial',f='۴۲۴ هزار',t=['hydrafacial_3','hydrafacial_4','hydrafacial_5'],tag='نزدیک‌ترین الگو',
+ dict(n='Hydrafacial',h='hydrafacial',f='۴۲۴ هزار',k='hydrafacial',w='https://www.hydrafacial.com',tag='نزدیک‌ترین الگو',
   why='یک «درمان» را به «اسم» تبدیل کرد. مشتری به کلینیک نمی‌گوید «پاکسازی عمیق می‌خواهم»، می‌گوید «هایدرافیشال می‌خواهم».',
   idea='روی سایت «مرکز تأییدشده پیدا کن» دارد. برنامهٔ سفیران متخصص پوست، کلینیک‌ها را شریک برند کرده.',
   les='نزدیک‌ترین الگو به هدف ماست: برندی که از راه کلینیک، اسم‌دار شده.',
   use='ریلز و هایلایت «اسم دکتر رو کجا چک کنم؟». فهرست مراکز، اگر کارفرما بخواهد، با عنوان «شرکت در دورهٔ اینووکادمی»، نه «پزشک تأییدشده».'),
- dict(n='Restylane',h='restylaneusa',f='۶۴ هزار',t=['restylane_0','restylane_2','restylane_4'],tag='رقیب هم‌ایده',
+ dict(n='Restylane',h='restylaneusa',f='۶۴ هزار',k='restylane',w='https://www.restylane.com',tag='رقیب هم‌ایده',
   why='شخصی‌سازی را پیش از ما گفته: «مشاوره‌ات، سؤال‌هایت؛ همه را بپرس» و «کدام بیمار رستیلین هستی؟».',
   idea='پرسیدن را تشویق می‌کند. پست‌ها تایپوگرافیک، تمیز و سرمه‌ای‌اند.',
   les='«شخصی‌سازی» به‌تنهایی متمایز نیست. تمایز ما باید در آیین باشد، نه در فناوری ژل.',
   use='سه سؤال و کارت نقشهٔ نور؛ چیزی که بیمار در دست می‌گیرد و رستیلین ندارد.'),
- dict(n='Profhilo',h='profhilo_sea',f='۱۵ هزار',t=['profhilo_0','profhilo_1','profhilo_2'],tag='الگوی شهرت',
+ dict(n='Profhilo',h='profhilo_sea',f='۱۵ هزار',k='profhilo',w='https://www.profhilo.com',tag='الگوی شهرت',
   why='پیج خودش کوچک است. شهرتش از بیمارها و کلینیک‌ها در تیک‌تاک آمد، و از یک اسم دسته: «مرطوب‌کنندهٔ تزریقی».',
   idea='پست‌های «پروفایلوی تقلبی / اصل» و «۳ ثانیه تا اینکه اصل بودنش را چک کنی».',
   les='مردم اسم یک دسته را به خاطر می‌سپارند، و اصالت‌سنجی محتوای پرطرفداری است.',
   use='سری «جعبه رو برگردون». معنای «عمق» برای ما «برنامهٔ هر نفر» است، نه لایه‌های بافت.'),
- dict(n='SkinCeuticals',h='skinceuticals',f='۲ میلیون',t=['skinceuticals_2','skinceuticals_3','skinceuticals_5'],tag='برند پزشک‌محور',
+ dict(n='SkinCeuticals',h='skinceuticals',f='۲ میلیون',k='skinceuticals',w='https://www.skinceuticals.com',tag='برند پزشک‌محور',
   why='فقط از راه پزشک فروخته می‌شود و با این حال سینمایی و خواستنی است: نور تیز، محصول وسط قاب.',
+  idea='الان PDRN را معرفی می‌کند: اول یک صفحهٔ آموزشی «PDRN چیست» که تزریق در مطب و مراقبت خانگی را جدا می‌کند، بعد تیزر بی‌چهرهٔ «به‌زودی»، بعد لیست انتظار.',
+  les='آگاهی‌سازی پیش از فروش، و پزشک همیشه وسط ماجرا.',
   use='«پزشکی» یعنی خشک نیست. پست‌های محصول‌محور با یک جمله، بدون ادعای برتری.'),
- dict(n='JUVÉDERM',h='juvederm',f='۵۱۸ هزار',t=['juvederm_0','juvederm_3'],tag='از سبد KMT',
+ dict(n='JUVÉDERM',h='juvederm',f='۵۱۸ هزار',k='juvederm',w='https://www.juvederm.com',tag='از سبد KMT',
   why='آموزش ساده و هایلایت ایمنی که همیشه در دسترس است.',
   use='هایلایت ثابت «اصالت و ایمنی». در محتوا هیچ محصولی از سبد KMT با دیگری مقایسه نمی‌شود.'),
- dict(n='rhode',h='rhode',f='رشد انفجاری',t=['rhode_0','rhode_1','rhode_4'],tag='شیء دست‌به‌دست‌شدنی',
+ dict(n='rhode',h='rhode',f='رشد انفجاری',k='rhode',w='https://www.rhodeskin.com',tag='شیء دست‌به‌دست‌شدنی',
   why='سه محصول در شروع، یک عبارت حسی و یک شیء خواستنی: قاب گوشی‌ای که ۲۰۰ هزار نفر در صفش بودند.',
   use='مردم یک «عبارت» و یک «شیء» را دست‌به‌دست می‌کنند. شیء ما کارت نقشهٔ نور است.'),
- dict(n='Glossier',h='glossier',f='۳٫۱ میلیون',t=['glossier_3','glossier_1','glossier_4'],tag='یک باور، یک جمله',
+ dict(n='Glossier',h='glossier',f='۳٫۱ میلیون',k='glossier',w='https://www.glossier.com',tag='یک باور، یک جمله',
   why='یک باور در یک جمله: «اول پوست، بعد آرایش». جامعه‌ای ساخت که حرف برند را تکرار می‌کند.',
   use='باور ما در یک جمله: «اول نقشه، بعد تزریق».'),
- dict(n='LANEIGE',h='laneige_us',f='۱٫۶ میلیون',t=['laneige_0','laneige_1','laneige_4'],tag='رنگ یعنی حافظه',
+ dict(n='LANEIGE',h='laneige_us',f='۱٫۶ میلیون',k='laneige_us',w='https://us.laneige.com',tag='رنگ یعنی حافظه',
   why='یک محصول قهرمان با طعم‌ها و رنگ‌های جدا. رنگ، حافظهٔ برند شد.',
   use='رنگ نوار جعبه‌های اینووسنس زبان بصری پیج می‌شود.'),
- dict(n='Anua',h='anua_global',f='۸۱۴ هزار',t=['anua_0','anua_1','anua_4'],tag='اول یک قهرمان',
+ dict(n='Anua',h='anua_global',f='۸۱۴ هزار',k='anua_global',w='https://anua.com',tag='اول یک قهرمان',
   why='یک جزء قهرمان آن‌قدر تکرار شد که با خود برند یکی شد.',
+  idea='برای PDRN شمارش معکوس «۱۲۰ ساعت» و هایلایت ماهی دارد؛ هیجان، نه پزشک.',
   use='سال اول با یک دسته جلو می‌رویم: «آب و نور پوست».'),
- dict(n='SK-II',h='skii',f='۴۵۴ هزار',t=['skii_0','skii_2'],tag='داستان مبدأ',
+ dict(n='SK-II',h='skii',f='۴۵۴ هزار',k='skii',w='https://www.sk-ii.com',tag='داستان مبدأ',
   why='افسانهٔ مبدأ «پیترا»؛ پنجاه سال است همین داستان را می‌گوید.',
   use='داستان مبدأ بومی ما: قنات. آب از عمق، با نقشه، به نور می‌رسد.'),
- dict(n='Tatcha',h='tatcha',f='۱٫۴ میلیون',t=['tatcha_1','tatcha_4','tatcha_5'],tag='آیین، با زبان امروز',
+ dict(n='Tatcha',h='tatcha',f='۱٫۴ میلیون',k='tatcha',w='https://www.tatcha.com',tag='آیین، با زبان امروز',
   why='آیین زیبایی ژاپنی را با زبان امروز روایت می‌کند.',
   use='گره‌چینی، کاشی و قنات، با زبان مینیمال امروز؛ ایرانی، ولی نه کهنه.'),
- dict(n='Sulwhasoo',h='sulwhasoo.official',f='۲۶۲ هزار',t=['sulwhasoo_0','sulwhasoo_1','sulwhasoo_3'],tag='لوکس از راه فرهنگ',
+ dict(n='Sulwhasoo',h='sulwhasoo.official',f='۲۶۲ هزار',k='sulwhasoo',w='https://www.sulwhasoo.com',tag='لوکس از راه فرهنگ',
   why='شصت سال میراث، با معماری و صنایع‌دستی کره.',
   use='جزئیات صنایع‌دستی ایرانی، نه طلا و زرق‌وبرق.'),
- dict(n='Beauty of Joseon',h='beautyofjoseon_official',f='۱٫۴ میلیون',t=['boj_0','boj_5'],tag='میراث + یک قهرمان',
+ dict(n='Beauty of Joseon',h='beautyofjoseon_official',f='۱٫۴ میلیون',k='beautyofjoseon',w='https://beautyofjoseon.com',tag='میراث + یک قهرمان',
   why='از ۸۳ هزار دلار فروش در ۲۰۲۰ به ۱۱۶٫۷ میلیون دلار در ۲۰۲۳؛ با میراث و یک محصول قهرمان.',
   use='اثبات اینکه «میراث + یک قهرمان» برای برند غیرغربی کار می‌کند.'),
- dict(n='medicube',h='medicube_global_official',f='۱٫۹ میلیون',t=['medicube_4','medicube_5'],tag='محتوای زیاد و واقعی',
+ dict(n='medicube',h='medicube_global_official',f='۱٫۹ میلیون',k='medicube',w='https://medicube.us',tag='محتوای زیاد و واقعی',
   why='«نتیجهٔ واقعی» و حجم بالای تولیدکنندهٔ محتوا.',
   use='محتوای زیاد و واقعی؛ ولی قبل‌وبعد و چهرهٔ مشهور در ایران پرریسک‌اند.'),
- dict(n='Shiseido',h='shiseido',f='۱٫۵ میلیون',t=[],tag='۱۵۰ سال علم',
+ dict(n='Shiseido',h='shiseido',f='۱٫۵ میلیون',k='shiseido',w='https://www.shiseido.com',tag='۱۵۰ سال علم',
   why='۱۵۰ سال «علم زندگی» و قرمز امضاشده.',
-  use='همهٔ پست‌هایش چهرهٔ مشهور دارند، برای همین تصویرش را نیاوردیم؛ پیج را مستقیم در اینستاگرام ببینید.'),
- dict(n='The Ordinary',h='theordinary',f='۳ میلیون',t=[],tag='شفافیت',
+  use='پست‌هایی که چهرهٔ مشهور دارند را نیاوردیم و با لینک اینستاگرام جایشان گذاشتیم.'),
+ dict(n='The Ordinary',h='theordinary',f='۳ میلیون',k='theordinary',w='https://theordinary.com',tag='شفافیت',
   why='«فرمول‌های بالینی با صداقت». شفافیت، خودش برند است.',
   use='لحن «لازم نیست» ما از همین جنس است.'),
- dict(n='La Mer',h='lamer',f='',t=[],tag='داستان، قیمت را توجیه می‌کند',
-  why='افسانهٔ دانشمندی که برای سوختگی صورت خودش کرم ساخت.',
-  use='داستان قنات همین نقش را برای ما بازی می‌کند.'),
- dict(n='Jeuveau',h='',f='',t=[],tag='کمپین نسل جوان',
-  why='کمپین «نیوتاکس» برای نسل جوان، با بازاریابی مشترک با کلینیک‌ها. پیج اینستاگرامش حتی پست ندارد.',
-  use='شهرت می‌تواند بیرون از پیج ساخته شود: در کلینیک.'),
+ dict(n='La Mer',h='lamer',f='۱٫۲ میلیون',k='lamer',w='https://www.cremedelamer.com',tag='داستان، قیمت را توجیه می‌کند',
+  why='افسانهٔ دانشمندی که برای سوختگی صورت خودش کرم ساخت. شعارش: «زاده از دریا».',
+  idea='سری «سفر دست‌به‌دست»: از جنگل جلبک‌های عمق دریا تا آزمایشگاه و کنترل کیفیت؛ پشت صحنهٔ ساخت، بدون یک چهره.',
+  les='نزدیک‌ترین مرجع برای جهان «دریا» و سری پشت صحنهٔ ساخت ما.',
+  use='داستان قنات و دریا همین نقش را برای ما بازی می‌کند: عمق، دست، دقت.'),
+ dict(n='Jeuveau',h='evolus',f='',k='jeuveau',w='https://www.jeuveau.com',tag='روز مخصوص برند',
+  why='پیج خود جوو‌و خالی است؛ همه‌چیز در پیج شرکت مادر (اوولوس) است. یک «روز جوو‌و» در سال ساخته: ۱۱ نوامبر، با تخفیف در همهٔ کلینیک‌ها.',
+  idea='یک روز مخصوص برند در تقویم، که کلینیک‌ها و بیمارها با هم جشنش می‌گیرند.',
+  use='شهرت می‌تواند بیرون از پیج ساخته شود: در کلینیک، با یک روز مشترک.'),
 ]
 REF_POSTS = {}
+IGD = '/home/claude/prop/ig/'
+NO_WEB = {'rhode','medicube','beautyofjoseon'}
+BRANDS = []
 for i, b in enumerate(B):
+    d = json.load(open(IGD + b['k'] + '.json', encoding='utf-8'))
     url = f'https://www.instagram.com/{b["h"]}/' if b['h'] else ''
     b['url'] = url
-    for j, t in enumerate(b['t']):
-        REF_POSTS[f'r{i}_{j}'] = {'imgs': [f'img/t_{t}.jpg'], 'cap': f'<span class="note">یادداشت ما:</span> {b["use"]}', 'url': url, 'ul': 'دیدن پیج در اینستاگرام', 'h': b['h']}
-BRANDS = [{'n': b['n'], 'h': b['h'], 'f': b['f'], 'url': b['url'], 'tag': b['tag'], 'why': b['why'], 'idea': b.get('idea',''), 'les': b.get('les',''), 'use': b['use'],
-           'tiles': [{'img': f'img/t_{t}.jpg', 'key': f'r{i}_{j}'} for j, t in enumerate(b['t'])]} for i, b in enumerate(B)]
+    if d.get('f'): b['f'] = d['f']
+    tiles = []
+    for j, t in enumerate(d['tiles']):
+        if t['img']:
+            key = f'r{i}_{j}'
+            cap = html.escape(t['cap'] or '')
+            REF_POSTS[key] = {'imgs': [t['img']], 'cap': f'<span class="en orig">{cap}</span><br><span class="note">یادداشت ما:</span> {b["use"]}', 'url': t['href'], 'ul': 'دیدن همین پست در اینستاگرام', 'h': b['h']}
+            tiles.append({'img': t['img'], 'key': key, 'kind': t['kind']})
+        else:
+            tiles.append({'href': t['href'], 'kind': t['kind']})
+    web = f'img/web/{b["k"]}.jpg' if b['k'] not in NO_WEB else ''
+    BRANDS.append({'n': b['n'], 'h': b['h'], 'f': b['f'], 'url': url, 'tag': b['tag'], 'why': b['why'], 'idea': b.get('idea',''), 'les': b.get('les',''), 'use': b['use'],
+                   'hl': d.get('hl', [])[:6], 'tiles': tiles, 'web': web, 'w': b['w']})
 b0 = B[0]
-ref_phone = ig_phone('ph-ref', b0['h'], b0['n'], b0['tag'], '', [('دنبال‌کننده', b0['f'])], BRANDS[0]['tiles'], avatar=b0['n'][0], link=f'instagram.com/{b0["h"]}')
+ref_phone = ig_phone('ph-ref', b0['h'], b0['n'], b0['tag'], '', [('دنبال‌کننده', b0['f'])], [t for t in BRANDS[0]['tiles'] if 'img' in t], avatar=b0['n'][0], link=f'instagram.com/{b0["h"]}')
 P(f'''<section class="sec z-d refs" id="refs">
 <div class="wrap browser">
   <ul class="blist" role="tablist">{''.join(f'<li><button role="tab" data-b="{i}" class="{"on" if i==0 else ""}"><span class="en">{b["n"]}</span><small>{b["tag"]}</small></button></li>' for i,b in enumerate(B))}</ul>
@@ -242,9 +261,10 @@ P(f'''<section class="sec z-d refs" id="refs">
       <div data-w="les"><dt>درس برای ما</dt><dd data-k="les">{b0['les']}</dd></div>
       <div class="use"><dt>چطور استفاده کنیم</dt><dd data-k="use">{b0['use']}</dd></div>
     </dl>
+    <a class="webcard" href="{BRANDS[0]['w']}" target="_blank" rel="noopener"><span class="wb"><i></i><i></i><i></i><em class="en">{BRANDS[0]['w'].replace('https://','')}</em></span><img src="{BRANDS[0]['web']}" alt="صفحهٔ اول سایت" loading="lazy"><span class="wt">صفحهٔ اول سایت برند {I['ext']}</span></a>
   </article>
 </div>
-<p class="wrap note">تصویرها فقط برای تحلیل داخلی‌اند و قاب‌های دارای چهرهٔ مشهور کنار گذاشته شده‌اند. آمار دنبال‌کننده‌ها: آبان ۱۴۰۵.</p>
+<p class="wrap note">تصویرها فقط برای تحلیل داخلی‌اند و پست‌هایی که چهرهٔ آدم مشهور یا اینفلوئنسر دارند تصویرشان نیامده و فقط لینکشان هست. ۱۲ پست آخر هر پیج و صفحهٔ اول سایت‌ها: ۲۴ آبان ۱۴۰۵.</p>
 </section>''')
 
 lessons = [('اسم دسته، نه فقط اسم برند','Profhilo · Hydrafacial'),('یک جملهٔ قابل‌تکرار','Glossier · rhode'),('یک شیء دست‌به‌دست‌شدنی','rhode'),

@@ -611,3 +611,19 @@ ul.plain.dk li{border-color:rgba(255,255,255,.12);color:#b7c6c3;font-size:15.5px
 .lcard .rw b{font-weight:500}
 .lcard .lab.empty{border-color:#d8cfbf;color:#9b917f;background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(155,145,127,.07) 8px 16px)}
 .lcard .f b .en{display:inline;font-size:inherit;color:inherit;font-weight:600;margin:0}
+/* reference browser: real grids, link tiles, website card */
+#ph-ref .ig-hl i span{background:radial-gradient(circle at 50% 40%,#f3f3f3,#d9d9d9)}
+#ph-ref .ig-hl div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr}
+.ig-grid a.xl{aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#f2f2f2;color:#8a8a8a;text-decoration:none;font-size:11px;text-align:center;padding:8px;line-height:1.5}
+.ig-grid a.xl svg{width:18px;height:18px}
+.ig-grid a.xl:hover{background:#e9e9e9;color:#262626}
+.ig-post .cap .orig{display:block;direction:ltr;text-align:left;color:#262626;font-size:12.5px;line-height:1.55;margin:4px 0 2px}
+.webcard{display:block;margin-top:26px;text-decoration:none;border-radius:12px;overflow:hidden;background:#0f2224;border:1px solid rgba(255,255,255,.1);transition:transform .3s var(--ease),border-color .3s}
+.webcard:hover{transform:translateY(-3px);border-color:rgba(191,238,238,.4)}
+.webcard .wb{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#18302f;direction:ltr}
+.webcard .wb i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}
+.webcard .wb em{font-style:normal;font-size:12px;color:#9fb6b3;margin-left:10px;background:rgba(0,0,0,.25);padding:3px 12px;border-radius:20px}
+.webcard img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.webcard .wt{display:flex;align-items:center;gap:8px;padding:11px 14px;font-size:13.5px;color:var(--glint)}
+.webcard .wt svg{width:14px;height:14px}
+.webcard.noimg .wt::after{content:'تصویر صفحهٔ اول به خاطر چهرهٔ مشهور نیامده';color:#8ea3a1;font-size:12px;margin-right:auto}
