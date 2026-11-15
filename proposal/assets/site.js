@@ -58,21 +58,30 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
 function wirePhone(ph) {
   const view = $('.ig-post', ph); if (!view) return null;
   const track = $('.track', view), dots = $('.dots', view), cnt = $('.cnt', view), cap = $('.cap', view), heart = $('.heart', view), lk = $('.lkb', view);
+  const car = $('.car', view);
+  car.insertAdjacentHTML('beforeend', '<button class="nav-a prev" aria-label="اسلاید قبلی"></button><button class="nav-a next" aria-label="اسلاید بعدی"></button>');
+  const prev = $('.nav-a.prev', car), next = $('.nav-a.next', car);
+  const idx = () => Math.round(track.scrollLeft / track.clientWidth);
+  const goTo = i => { const n = track.children.length; i = Math.max(0, Math.min(n - 1, i)); track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); };
+  const arrows = () => { const n = track.children.length, i = idx(); prev.hidden = n < 2 || i === 0; next.hidden = n < 2 || i >= n - 1; };
+  prev.addEventListener('click', e => { e.stopPropagation(); goTo(idx() - 1); });
+  next.addEventListener('click', e => { e.stopPropagation(); goTo(idx() + 1); });
+  dots.addEventListener('click', e => { const d = e.target.closest('i'); if (d) goTo([...dots.children].indexOf(d)); });
   function open(id) {
     const p = POSTS[id]; if (!p) return;
     track.innerHTML = p.imgs.map(s => `<img src="${s}" alt="" draggable="false">`).join('');
     track.scrollLeft = 0;
     const n = p.imgs.length;
     dots.innerHTML = n > 1 ? p.imgs.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('') : '';
-    cnt.style.display = n > 1 ? '' : 'none'; cnt.textContent = FA(`1/${n}`);
+    cnt.style.display = n > 1 ? '' : 'none'; cnt.textContent = FA(`1/${n}`); cnt.dir = 'ltr';
     const h = p.h || $('.ig-top .u', ph).textContent;
     cap.innerHTML = `<b>${h}</b>${p.cap}` + (p.url ? `<br><a href="${p.url}" target="_blank" rel="noopener">${EXT}${p.ul || 'دیدن در اینستاگرام'}</a>` : `<span class="t">نمونهٔ پیشنهادی</span>`);
-    lk.classList.remove('on'); view.classList.add('open'); view.scrollTop = 0;
+    lk.classList.remove('on'); view.classList.add('open'); view.scrollTop = 0; arrows();
   }
   ph.addEventListener('click', e => { const b = e.target.closest('.ig-grid button[data-p]'); if (b) open(b.dataset.p); });
   $('.back', view).addEventListener('click', () => view.classList.remove('open'));
   track.addEventListener('scroll', () => {
-    const n = track.children.length; if (n < 2) return;
+    const n = track.children.length; arrows(); if (n < 2) return;
     const i = Math.round(track.scrollLeft / track.clientWidth);
     $$('i', dots).forEach((d, k) => d.classList.toggle('on', k === i)); cnt.textContent = FA(`${i + 1}/${n}`);
   }, { passive: true });
@@ -112,7 +121,7 @@ function showBrand(i) {
   $('.ig-st', refPh).innerHTML = b.f ? `<div><b>${b.f}</b><span>دنبال‌کننده</span></div>` : '';
   $('.ig-bio', refPh).innerHTML = `<b>${b.n}</b><em>${b.tag}</em>` + (b.h ? `<span class="lk">instagram.com/${b.h}</span>` : '');
   $('.ig-grid', refPh).innerHTML = b.tiles.length
-    ? b.tiles.map(t => `<button data-p="${t.key}" aria-label="باز کردن پست"><img src="${t.img}" alt="" loading="lazy"></button>`).join('')
+    ? b.tiles.map(t => `<button data-p="${t.key}" aria-label="باز کردن پست"><img src="${t.img}" alt=""></button>`).join('')
     : `<div class="ig-empty">${b.h ? 'پست‌های این پیج را مستقیم در اینستاگرام ببینید.' : 'این برند پیج فعالی ندارد.'}</div>`;
   $('.ig', refPh).scrollTop = 0;
   if (b.url) { go.href = b.url; go.classList.remove('off'); } else go.classList.add('off');

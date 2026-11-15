@@ -553,3 +553,12 @@ ul.plain.dk li{border-color:rgba(255,255,255,.12);color:#b7c6c3;font-size:15.5px
 .ig-hl{gap:8px;padding:0 12px 14px}
 .ig-hl div{width:52px;font-size:10.5px;white-space:nowrap}
 .ig-hl i{width:52px;height:52px}
+/* carousel controls */
+.car .cnt{right:auto;left:12px}
+.car .nav-a{all:unset;cursor:pointer;position:absolute;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:rgba(255,255,255,.88);box-shadow:0 2px 8px rgba(0,0,0,.25);z-index:3}
+.car .nav-a:after{content:"";position:absolute;top:50%;left:50%;width:8px;height:8px;border:solid #262626;border-width:2px 2px 0 0;margin:-4px 0 0 -6px;transform:rotate(45deg)}
+.car .nav-a.prev{left:8px}.car .nav-a.prev:after{transform:rotate(-135deg);margin-left:-2px}
+.car .nav-a.next{right:8px}
+.car .nav-a[hidden]{display:none}
+.ig-post .dots{pointer-events:auto}
+.ig-post .dots i{cursor:pointer;padding:0;box-sizing:content-box}
