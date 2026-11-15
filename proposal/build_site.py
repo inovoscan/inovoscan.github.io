@@ -89,7 +89,7 @@ P(f'''<section class="hero z-d" id="top">
     <h1 class="slogan"><span>از عمق</span><span>تا نور</span></h1>
     <p class="sub">پروپوزال استراتژی اینستاگرام اینووسنس، برای {en('KMT')}.<br>چطور مردم خودشان از دکترشان اینووسنس را بخواهند.</p>
   </div>
-  <div class="boxes">{''.join(f'<div class="bx" style="--c:{C[k]};--i:{n}"><img src="img/box_{k}.webp" alt="{k}"></div>' for n,k in enumerate(K5))}</div>
+  <div class="boxes">{''.join(f'<div class="bx" style="--c:{C[k]};--i:{n}"><img src="img/box_{k}.webp" alt="{k}"></div>' for n,k in enumerate(['silk','smile','shine','style','shape']))}</div>
 </div>
 <a class="down" href="#sentence" aria-label="ادامه">پایین بروید</a>
 </section>''')
@@ -99,6 +99,7 @@ P(f'''<section class="sec z-d sentence" id="sentence">
 <div class="wrap">
   <p class="pre">مردم نباید اسم فیلر را حفظ کنند. باید یک جمله را حفظ کنند:</p>
   <div class="bigq" id="bigq"><span class="gm">«</span><span class="typed" data-t="دکتر، اینووسنس برای من مناسبه؟">دکتر، اینووسنس برای من مناسبه؟</span><span class="gm">»</span></div>
+  <div class="ctas"><a href="#card" class="cta">کارت نقشهٔ نور را باز کن ↓</a><a href="#instagram" class="cta ghost">پیج پیشنهادی و فیلم شروع را ببین ↓</a></div>
   <div class="nums">
     <div><b data-count="1">۱</b><p>جمله‌ای که بیمار در مطب می‌گوید؛ هدف کل این پروپوزال.</p></div>
     <div><b data-count="100">۱۰۰</b><p>معیار موفقیت: در هر ۱۰۰ مشاوره، چند بار بیمار خودش اسم اینووسنس را می‌آورد.</p></div>
@@ -148,7 +149,7 @@ P(f'''<section class="sec z-d" id="rules">
       </ol>
       <h3 class="mt">سه ضمیمهٔ درخواست</h3>
       <ul class="plain dk"><li><b>پروانهٔ ساخت و کد {en('IRC')}</b> از سازمان غذا و دارو.</li><li><b>متن پیشنهادی بیو:</b> نام رسمی شرکت صاحب‌پروانه، شمارهٔ مجوز سیتا، و «صرفاً برای آگاهی‌بخشی و اصالت فرآورده».</li><li><b>درخواست تأیید قالب شش سری برای یک سال</b>، با نمونه‌سناریوهای فصل اول؛ تا هر پست جدا در صف کمیته نماند.</li></ul>
-      <p class="note">در هر سه پله جملهٔ هدف کار می‌کند، چون کارت و جعبه نام برند را به دست بیمار می‌دهند. شمارهٔ ماده‌ها در نسخه‌های مختلف دستورالعمل فرق دارد؛ پیش از جلسه با متن رسمی جاری کنترل شود. این بخش جایگزین نظر مشاور حقوقی کارفرما نیست.</p>
+      <p class="note">در پلهٔ سوم، کارت باعث نمی‌شود بیمار در اول همان مشاوره اسم اینووسنس را ببرد، چون آخر مشاوره داده می‌شود. نقشش یادآوری و معرفی به نفر بعدی است: بیمار اسم را با خودش می‌برد و به دوستش می‌گوید. شمارهٔ ماده‌ها در نسخه‌های مختلف دستورالعمل فرق دارد؛ پیش از جلسه با متن رسمی جاری کنترل شود. این بخش جایگزین نظر مشاور حقوقی کارفرما نیست.</p>
     </div>
   </div>
 </div></section>''')
@@ -270,6 +271,43 @@ P(f'''<section class="sec z-m idea" id="idea">
 </div></section>
 <div class="tr tr-ml"></div>''')
 
+# the card (moved right after the idea)
+P(f"""<section class="sec z-l cardsec" id="card">
+<div class="wrap split">
+  <div class="txt">
+    <h2>کارت نقشهٔ نور</h2>
+    <p class="lead">کارتی تاشو که دکتر آخر مشاوره می‌دهد، حتی اگر تصمیم امروز «فکر می‌کنم» باشد. جملهٔ خود مراجعه‌کننده بالای کارت می‌نشیند، و پیشنهاد پزشک در یک خط کوتاه زیرش: چه محصولی، کجا، چقدر، و چرا.</p>
+    <ul class="plain">
+      <li><b>بالای کارت، به خط خودش:</b> چیزی که برایش مهم است، در یک جمله.</li>
+      <li><b>یک خط، سه «چرا»:</b> محصول، ناحیه و مقدار، با دلیل. کوتاه، تا پر کردنش وقت پزشک را نگیرد. «لازم نیست» هم جواب است.</li>
+      <li><b>تصمیم امروز:</b> «تزریق»، «فعلاً نه»، «فکر می‌کنم». کسی که کاری نکرده هم دلیلی برای نگه‌داشتن کارت دارد.</li>
+      <li><b>برچسب دوم سرنگ و کد {en('TTAC')}</b> روز تزریق داخلش چسبانده می‌شود؛ بیرونش ساده و بی‌نام، با نقش گره برجسته. دو نمونه را با دکمه‌های بالای کارت ببینید.</li>
+    </ul>
+    <p class="note">این نمونه، کارت همان زن فیلم «لبخندمو دوست دارم» است. جواب‌های پزشک فقط داخل کارت و در همین پروپوزال دیده می‌شوند؛ در پست‌های عمومی، کارت خالی یا فقط با جملهٔ خود مراجعه‌کننده نشان داده می‌شود.</p>
+    <button class="opencue" type="button">باز کردن کارت</button>
+  </div>
+  <div class="cardbox">
+    <div class="cstates" role="group" aria-label="دو نمونهٔ کارت"><button type="button" data-s="a" class="on">نمونهٔ ۱: تصمیم به تزریق</button><button type="button" data-s="b">نمونهٔ ۲: می‌خواهم فکر کنم</button></div>
+    <div class="lcard">
+      <div class="inside">
+        <div class="mine"><span>چیزی که برای من مهم است</span><b>دلم می‌خواد وقتی می‌خندم، همین‌جوری بمونه.</b></div>
+        <div class="f"><span>پیشنهاد پزشک و دلیلش</span><b>{en('Mesocell Plus')} برای کیفیت پوست گونه، نه خط لبخند؛ یک سرنگ کامل؛ خنده دست نمی‌خورد.</b></div>
+        <div class="tks"><em>تصمیم امروز</em><span class="sa"><i></i>تزریق</span><span><i></i>فعلاً نه</span><span class="sb"><i></i>فکر می‌کنم</span></div>
+        <div class="rw"><span>جلسه</span><b class="xa">۱ از ۳؛ جلسهٔ بعد چهار هفتهٔ دیگر</b><b class="xb">هر وقت تصمیم گرفتی؛ همین کارت را بیاور</b></div>
+        <div class="lab xa"><span>برچسب سرنگ و کد {en('TTAC')}</span><i></i></div>
+        <div class="lab empty xb"><span>جای برچسب سرنگ و کد {en('TTAC')}، برای روز تزریق</span></div>
+      </div>
+      <div class="cover"><img src="img/ai/card-emboss-43.jpg" alt=""></div>
+    </div>
+  </div>
+</div>
+<div class="wrap cphotos">
+  <figure><img src="img/ai/box-card-tea-45.jpg" alt="" loading="lazy"><figcaption>بعد از مشاوره، در خانه</figcaption></figure>
+  <figure><img src="img/ai/card-write-916.jpg" alt="" loading="lazy"><figcaption>پزشک جواب‌ها را می‌نویسد؛ فقط داخلی، در تبلیغ نمی‌آید</figcaption></figure>
+  <p class="note">نوشته‌های روی کارت و عکس‌ها نمونهٔ مفهومی‌اند.</p>
+</div>
+</section>""")
+
 P(f'''<section class="sec z-l" id="diff">
 <div class="wrap">
   <h2>شبیه هیچ‌کدام نیستیم</h2>
@@ -329,41 +367,6 @@ P(f'''<section class="sec z-l qanat" id="qanat">
   <figure class="tall"><img src="img/ai/qanat-corridor-11.jpg" alt="" loading="lazy"><figcaption>نمونهٔ مفهومی: نور از بالا، آب در عمق</figcaption></figure>
 </div>
 <div class="qsvg">{qsvg}</div>
-</section>''')
-
-# the card
-P(f'''<section class="sec z-l cardsec" id="card">
-<div class="wrap split">
-  <div class="txt">
-    <h2>کارت نقشهٔ نور</h2>
-    <p class="lead">کارتی تاشو که دکتر بعد از مشاوره می‌دهد، حتی اگر تصمیم امروز «فعلاً نه» باشد. کارت «چرا» را ثبت می‌کند، نه فقط «چه» را.</p>
-    <ul class="plain">
-      <li><b>چیزی که برای من مهم است:</b> به زبان خود مراجعه‌کننده، در سه تا پنج کلمه.</li>
-      <li><b>پیشنهاد پزشک و دلیلش:</b> اگر دو پزشک به دو دلیل یک محصول را انتخاب کنند، این تفاوت روی کارت می‌ماند.</li>
-      <li><b>تصمیم امروز:</b> «تزریق»، «فعلاً نه»، «فکر می‌کنم». کسی که کاری نکرده هم دلیلی برای نگه‌داشتن کارت دارد.</li>
-      <li><b>برچسب دوم سرنگ و کد {en('TTAC')}</b> داخلش چسبانده می‌شود؛ بیرونش ساده و بی‌نام، با نقش گره برجسته، تا در کیف بماند و چیزی را علنی نکند.</li>
-    </ul>
-    <button class="opencue" type="button">باز کردن کارت</button>
-  </div>
-  <div class="cardbox">
-    <div class="lcard">
-      <div class="inside">
-        <div class="f"><span>چیزی که برای من مهم است</span><b>پوستم خسته نباشد.</b></div>
-        <div class="f"><span>پیشنهاد پزشک و دلیلش</span><b>کیفیت پوست، نه حجم.</b></div>
-        <div class="f"><span>تصمیم امروز</span><div class="tks"><span class="on"><i></i>تزریق</span><span><i></i>فعلاً نه</span><span><i></i>فکر می‌کنم</span></div></div>
-        <div class="rw"><span>محصول</span><b>{en('Mesocell Plus')} · یک سرنگ کامل · جلسهٔ ۱ از ۳</b></div>
-        <div class="rw"><span>جلسهٔ بعد</span><b>چهار هفتهٔ دیگر</b></div>
-        <div class="lab"><span>محل برچسب سرنگ و کد {en('TTAC')}</span><i></i></div>
-      </div>
-      <div class="cover"><img src="img/ai/card-emboss-43.jpg" alt=""></div>
-    </div>
-  </div>
-</div>
-<div class="wrap cphotos">
-  <figure><img src="img/ai/box-card-tea-45.jpg" alt="" loading="lazy"><figcaption>بعد از مشاوره، در خانه</figcaption></figure>
-  <figure><img src="img/ai/card-write-916.jpg" alt="" loading="lazy"><figcaption>پیشنهاد پزشک، با دلیل؛ فقط داخلی، در تبلیغ نمی‌آید</figcaption></figure>
-  <p class="note">نوشته‌های روی کارت و عکس‌ها نمونهٔ مفهومی‌اند.</p>
-</div>
 </section>''')
 
 # ================= CHAPTER 3: CONTENT =================
@@ -478,19 +481,20 @@ P(f'''<section class="sec z-l dmsec" id="dm">
 films = [('reel1','لبخندمو دوست دارم','فیلم شروع، ۲۲ ثانیه','img/ai/mirror-916.jpg',
   ['خانه. زنی جلوی آینه موهایش را جمع می‌کند.','خواهرش: «اگه بری مشاوره، اول چی می‌پرسی؟»','رو به آینه تمرین می‌کند: «دکتر، اینووسنس برای من مناسبه؟»','خواهر: «اون چیزی که برام گفتی رو هم بهش بگو.»','در گوشی‌اش می‌نویسد: «لبخندمو دوست دارم. دلم می‌خواد همین‌جوری بمونه.»'],
   'بدون پزشک در قاب. نسخهٔ برنددار فقط پس از استعلام کتبی.'),
- ('reel2','از قنات تا پوست','فیلم برند، ۴۵ ثانیه','img/ai/abanbar-916.jpg',
+ ('reel2','از قنات تا پوست','فیلم برند، ۴۵ ثانیه','img/ai/qanat-corridor-11.jpg',
   ['آب زلال در دل قنات، نور از دهانهٔ چاه.','همان نور، روی خط تای کارت نقشهٔ نور.','دست‌خط روی کارت: «چیزی که برای من مهم است…»','کارت بسته، در کیف مراجعه‌کننده.','پایان: «از عمق تا نور.»'],
   'ماهی یک فیلم از همین سری.'),
  ('reel3','جعبه رو برگردون','اصالت‌سنجی، ۱۵ ثانیه','img/ai/box-flip-916.jpg',
   ['دست، جعبهٔ مشکی را برمی‌گرداند.','نزدیک: برچسب اصالت و شماره.','استعلام در گوشی؛ تیک سبز.','پایان: «قبل از تزریق، جعبه را ببین.»'],
   'پرطرفدارترین الگوی پروفایلو، به زبان ما.')]
+BEATIMG = {'reel2': ['img/ai/qanat-corridor-11.jpg','img/ai/card-emboss-43.jpg','img/ai/card-write-916.jpg','img/ai/box-card-tea-45.jpg','img/ai/qanat-corridor-11.jpg']}
 side = f'<div class="side">{I["heart"]}{I["cmt"]}{I["send"]}</div>'
 P(f'''<section class="sec z-l" id="films">
 <div class="wrap">
   <h2>لانچ با جمله‌ای که باید معروف شود</h2>
   <p class="lead">روی هر کاور، صحنه‌های فیلم مثل استوری جلو می‌روند. ویدیوی نهایی که آماده شد، همین‌جا جایش می‌نشیند.</p>
   <div class="reels">{''.join(f"""<figure class="reel"><div class="phone slim"><div class="scr">{sbar(True)}
-    <div class="rv" data-key="{k}" data-beats='{H.escape(json.dumps(b, ensure_ascii=False))}'><img class="bg" src="{img}" alt=""><div class="shade"></div><div class="bars"></div><div class="beat"></div>{side}<div class="rmeta"><i></i><span>inovosense</span></div></div>
+    <div class="rv" data-key="{k}" data-beats='{H.escape(json.dumps(b, ensure_ascii=False))}' data-imgs='{H.escape(json.dumps(BEATIMG.get(k,[]), ensure_ascii=False))}'><img class="bg" src="{img}" alt=""><div class="shade"></div><div class="bars"></div><div class="beat"></div>{side}<div class="rmeta"><i></i><span>inovosense</span></div></div>
   </div></div><figcaption><h3>{t}</h3><span>{d}</span><p>{n}</p></figcaption></figure>""" for k,t,d,img,b,n in films)}</div>
   <p class="note">همهٔ فیلم‌ها بدون سوزن، بدون صحنهٔ تزریق و بدون پزشک در قاب تبلیغ. کاورها نمونهٔ مفهومی‌اند.</p>
 </div></section>''')
@@ -573,7 +577,12 @@ P(f'''<section class="sec z-l" id="visibility">
     <div><ol class="pairs">{pairs}</ol>
       <ul class="plain"><li>شش جفت کلینیک هم‌اندازه و هم‌محله.</li><li>در هر جفت، یکی آیین نقشهٔ نور را اجرا می‌کند و یکی نه.</li><li>منشی یا پزشک، جملهٔ اول بیمار را ثبت می‌کند.</li></ul></div>
     <div class="kpi"><span>معیار اصلی، در هر ۱۰۰ مشاوره</span><b>چند بار بیمار، بی‌آنکه پزشک بگوید، اسم اینووسنس را می‌آورد؟</b>
-      <p>معیارهای کمکی: استعلام برچسب اصالت، ذخیرهٔ پست‌ها، ارسال در دایرکت، یادآوری اسم در همراهان، بازگشت برای جلسهٔ بعد.</p></div>
+      <p>معیارهای کمکی: استعلام برچسب اصالت، ذخیرهٔ پست‌ها، ارسال در دایرکت، بازگشت برای جلسهٔ بعد.</p></div>
+  </div>
+  <div class="two-m">
+    <div><span>اثر پیج</span><b>اسم بردن خودجوش، اول مشاوره</b><p>فقط از مراجعه‌کننده‌های تازه، پیش از اینکه کسی در مطب اسم برند را بیاورد. نشان می‌دهد پیج اسم را به مطب رسانده.</p></div>
+    <div><span>اثر کارت</span><b>یادآوری اسم، بعد از گرفتن کارت</b><p>فقط میان کسانی که کارت گرفته‌اند: در جلسهٔ بعد، یا با QR اختیاری روی کارت، یک سؤال: «اسم محصولی که دکتر پیشنهاد داد یادتان هست؟». کلینیک برای سنجش با بیمار تماس نمی‌گیرد.</p></div>
+    <p class="note">اگر پلهٔ سوم مرحلهٔ صفر (نسخهٔ بی‌نام) اجرا شود، «اثر پیج» طبیعتاً نزدیک صفر است، چون پیج اسمی نمی‌برد؛ در آن حالت فقط «اثر کارت» ملاک است. این از پیش با کارفرما توافق می‌شود.</p>
   </div>
 </div></section>''')
 

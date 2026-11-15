@@ -143,6 +143,12 @@ if (lc) {
   lc.addEventListener('click', t); cue.addEventListener('click', t);
 }
 
+/* card: two sample states */
+$$('.cstates button').forEach(b => b.addEventListener('click', () => {
+  $$('.cstates button').forEach(x => x.classList.toggle('on', x === b));
+  const c = $('.lcard'); c.classList.toggle('st-b', b.dataset.s === 'b'); if (!c.classList.contains('open')) c.click();
+}));
+
 /* donut ↔ list */
 const donut = $('.donut');
 if (donut) {
@@ -160,9 +166,12 @@ $$('.rv').forEach(rv => {
   const src = MEDIA[rv.dataset.key];
   if (src) { $('img.bg', rv).insertAdjacentHTML('afterend', `<video src="${src}" autoplay muted loop playsinline></video>`); $('.beat', rv).remove(); $('.bars', rv).remove(); return; }
   const beats = JSON.parse(rv.dataset.beats), bars = $('.bars', rv), box = $('.beat', rv);
+  const imgs = JSON.parse(rv.dataset.imgs || '[]'), bg = $('img.bg', rv);
+  imgs.forEach(u => { const im = new Image(); im.src = u; });
   bars.innerHTML = beats.map(() => '<i><b></b></i>').join('');
   let i = 0, timer = null;
   const show = () => { $$('i', bars).forEach((b, k) => { b.className = k < i ? 'done' : (k === i ? 'cur' : ''); });
+    if (imgs[i] && !bg.src.endsWith(imgs[i])) { bg.classList.add('sw'); setTimeout(() => { bg.src = imgs[i]; bg.classList.remove('sw'); }, 250); }
     box.innerHTML = `<span>${beats[i]}</span>`; timer = setTimeout(() => { i = (i + 1) % beats.length; show(); }, 2800); };
   new IntersectionObserver(es => { if (es[0].isIntersecting) { if (!timer) show(); } else { clearTimeout(timer); timer = null; } }, { threshold: .4 }).observe(rv);
 });
