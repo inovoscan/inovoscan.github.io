@@ -627,3 +627,56 @@ ul.plain.dk li{border-color:rgba(255,255,255,.12);color:#b7c6c3;font-size:15.5px
 .webcard .wt{display:flex;align-items:center;gap:8px;padding:11px 14px;font-size:13.5px;color:var(--glint)}
 .webcard .wt svg{width:14px;height:14px}
 .webcard.noimg .wt::after{content:'تصویر صفحهٔ اول به خاطر چهرهٔ مشهور نیامده';color:#8ea3a1;font-size:12px;margin-right:auto}
+/* expanded explanations: questions, card, qanat */
+h3.sub{font-size:clamp(26px,2.4vw,36px);font-weight:300;margin:110px 0 18px;line-height:1.5}
+h3.sub small{display:block;font-size:14px;font-weight:400;color:var(--mute);margin-top:4px}
+.z-m h3.sub small{color:var(--muted)}
+.dt{width:100%;border-collapse:collapse;font-size:15.5px;margin-top:26px;min-width:720px}
+.dt th,.dt td{padding:16px 14px;text-align:right;vertical-align:top;line-height:1.85;border-bottom:1px solid color-mix(in srgb,currentColor 16%,transparent)}
+.dt thead th{font-size:13px;font-weight:500;opacity:.65;border-bottom:1px solid color-mix(in srgb,currentColor 45%,transparent)}
+.dt tbody th{font-weight:600;width:190px}
+.dt tbody th small{display:block;font-weight:400;font-size:12px;opacity:.6}
+.dt tr[style] th{border-right:3px solid var(--c);padding-right:14px}
+.z-m .dt td{color:#c9d6d3}
+.dt td.ok{color:#2c8a6b}.z-m .dt td.ok{color:#9fe3c6}
+.dt td.no{color:#b04a5e}.z-m .dt td.no{color:#f2a6b4}
+.why2{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+.why2 span{font-size:14px;color:var(--water)}
+.why2 p{font-size:17px;line-height:1.9;margin-top:6px;color:#d6e3e0}
+.reasons{list-style:none;counter-reset:r;display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px;margin-top:40px}
+.reasons li{counter-increment:r;border-top:1px solid rgba(28,26,22,.2);padding-top:16px}
+.reasons li:before{content:counter(r,persian);display:block;font-size:42px;font-weight:150;color:var(--water);line-height:1.1}
+.reasons b{font-size:19px;font-weight:600}
+.reasons p{font-size:15.5px;line-height:1.9;color:#5e5649;margin-top:4px}
+.showno{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.showno>div{border-radius:14px;padding:22px 24px}
+.showno .yes{background:#e2f1ef}.showno .nope{background:#f6e3e6}
+.showno span{font-size:14px;font-weight:600}
+.showno .yes span{color:#0e3b3e}.showno .nope span{color:#8c2b40}
+.showno ul{list-style:none;margin-top:10px}
+.showno li{padding:6px 0;font-size:16px;line-height:1.8;border-top:1px solid rgba(28,26,22,.08)}
+.cig{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;margin-top:60px}
+.cig figure img{width:100%;border-radius:10px;display:block;box-shadow:0 18px 40px rgba(28,26,22,.18)}
+.cig figcaption{font-size:13px;color:var(--mute);margin-top:10px}
+.cig .dt{margin-top:0}
+.qsteps{list-style:none;counter-reset:q;display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:30px}
+.qsteps li{counter-increment:q;border-top:2px solid #3a342b;padding-top:14px}
+.qsteps li:before{content:counter(q,persian);font-size:34px;font-weight:150;color:#8a7350;display:block}
+.qsteps b{font-size:18px;font-weight:600}
+.qsteps p{font-size:15px;line-height:1.85;color:#5e5649;margin-top:4px}
+.qnums{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px;padding:30px 0;border-top:1px solid rgba(28,26,22,.15);border-bottom:1px solid rgba(28,26,22,.15)}
+.qnums b{display:block;font-size:clamp(30px,3vw,46px);font-weight:200;line-height:1.2}
+.qnums span{font-size:14px;color:var(--mute)}
+.qfull .note a{color:inherit}
+.story{margin:110px auto 0;max-width:30em;font-size:clamp(22px,2.1vw,30px);line-height:2;font-weight:250;text-align:center}
+.story span{display:block;font-size:13px;font-weight:500;color:var(--mute);margin-bottom:22px}
+.story b{font-weight:600}
+.worlds{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.worlds>div{border-radius:14px;padding:26px;background:#fff;border-top:6px solid var(--c)}
+.worlds .w{font-size:14px;color:var(--mute)}
+.worlds b{display:block;font-size:clamp(24px,2.2vw,32px);font-weight:300;margin:6px 0 12px;line-height:1.5}
+.worlds p{font-size:15px;line-height:1.8}
+.worlds .pn{font-size:14px;color:var(--mute);margin-top:2px}
+.worlds .im{margin-top:14px;padding-top:12px;border-top:1px solid rgba(28,26,22,.1);color:#5e5649}
+@media (max-width:1000px){.reasons,.worlds{grid-template-columns:1fr 1fr}.qsteps{grid-template-columns:1fr 1fr}.qnums{grid-template-columns:1fr 1fr}.cig{grid-template-columns:1fr}.cig figure{max-width:280px}}
+@media (max-width:700px){.reasons,.worlds,.qsteps,.why2,.showno{grid-template-columns:1fr}h3.sub{margin-top:80px}}
